@@ -1,9 +1,12 @@
+#include <stdlib.h>
 #include "main.h"
+
 /**
- * *str_concat - concatenates two strings.
+ * *str_concat - concatenates two strings
  * @s1: string to concatenate
  * @s2: other string to concatenate
- * Return: pointer
+ *
+ * Return: pointer to the new string created (Success), or NULL (Error)
  */
 char *str_concat(char *s1, char *s2)
 {
@@ -23,13 +26,14 @@ char *str_concat(char *s1, char *s2)
 	j = 0;
 
 	if (s1)
-	{
+{
 		while (i < len1)
 		{
 			s3[i] = s1[i];
 			i++;
 		}
 	}
+
 	if (s2)
 	{
 		while (i < (len1 + len2))
@@ -40,5 +44,7 @@ char *str_concat(char *s1, char *s2)
 		}
 	}
 	s3[i] = '\0';
+
 	return (s3);
 }
+

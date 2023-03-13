@@ -4,11 +4,12 @@
 /**
  * *_strdup - copies the string given as parameter
  * @str: string to duplicate
- * Return: pointer to the copied string, NULL
+ *
+ * Return: pointer to the copied string (Success), NULL (Error)
  */
 char *_strdup(char *str)
 {
-	char *dup;
+	char *duplicate;
 	unsigned int i, len;
 
 	i = 0;
@@ -19,14 +20,14 @@ char *_strdup(char *str)
 
 	while (str[len])
 		len++;
+	duplicate = malloc(sizeof(char) * (len + 1));
 
-	dup = malloc(sizeof(char) * (len + 1));
-
-	if (dup == NULL)
+	if (duplicate == NULL)
 		return (NULL);
 
-	while ((dup[i] = str[i]) != '\0')
+	while ((duplicate[i] = str[i]) != '\0')
 		i++;
 
-	return (dup);
+	return (duplicate);
 }
+
